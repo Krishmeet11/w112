@@ -7,14 +7,14 @@
   - name: Copy WAR file to Tomcat
   
    copy:
-  	  src: "/var/snap/jenkins/5022/workspace/maven112/maven112.war"
+  	  src: "/var/snap/jenkins/5022/workspace/maven112/target/maven112.war"
   	
   	  dest: "/opt/tomcat/webapps/maven112.war"
   	
   	 remote_src: no
   	
   - name: Restart Tomcat
-  	  shell:
+  	  shell: |
   	   	/opt/tomcat/bin/shutdown.sh
   		   sleep 5
   		   /opt/tomcat/bin/startup.sh
